@@ -1,0 +1,16 @@
+{% extends "base.html" %} 
+{% block title %} Upload Page {% endblock%} 
+{% block content %} 
+    {% if not session.permanent %}
+        <body>
+            <h1>Upload SOURCE.CSV File</h1>
+            <form method="post" enctype="multipart/form-data">
+                <input type="file" name="csv_file" />
+                <input type="submit" value="Upload" />
+            </form>
+        </body>
+    {% else %}
+        <h1>File Already Uploaded</h1>
+        <a class="btn btn-primary" href="data">Show Data</a>
+    {% endif %}
+{% endblock %}

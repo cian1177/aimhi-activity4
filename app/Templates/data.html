@@ -1,0 +1,55 @@
+{% extends "base.html"%} 
+{% block title %}Show Table Data{% endblock%} 
+{% block content %}
+    <div class="d-flex justify-content-start mb-3">
+        <a class="btn btn-warning" onclick="showConfirmationDialog()">Delete Data</a>
+    </div>
+    <body>
+        <table class="table" >
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">Ref</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Location</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Status Changed</th>
+                    <th scope="col">Open Actions</th>
+                    <th scope="col">Total Actions</th>
+                    <th scope="col">Association</th>
+                    <th scope="col">OverDue</th>
+                    <th scope="col">Images</th>
+                    <th scope="col">Comments</th>
+                    <th scope="col">Documents</th>
+                    <th scope="col">Project</th>
+                    <th scope="col">Report Forms</th>
+                    <th scope="col">Report Forms Group</th>
+                </tr>
+            </thead>
+            <thead>
+                {% for data in table_data %}
+                <tr>
+                    <td scope="row">{{ data.id }}</td>
+                    <td>{{ data.ref }}</td>
+                    <td>{{ data.status }}</td>
+                    <td>{{ data.location }}</td>
+                    <td>{{ data.name }}</td>
+                    <td>{{ data.type }}</td>
+                    <td>{{ data.status_change }}</td>
+                    <td>{{ data.open_actions }}</td>
+                    <td>{{ data.total_actions }}</td>
+                    <td>{{ data.association }}</td>
+                    <td>{{ data.overdue }}</td>
+                    <td>{{ data.images }}</td>
+                    <td>{{ data.comments }}</td>
+                    <td>{{ data.documents }}</td>
+                    <td>{{ data.project }}</td>
+                    <td>{{ data.report_forms }}</td>
+                    <td>{{ data.report_forms_group }}</td>
+                </tr>
+                {% endfor %}
+            </thread>
+      </table>
+    </body>
+{% endblock %}
